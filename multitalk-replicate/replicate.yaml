@@ -1,0 +1,31 @@
+# Replicate configuration for MultiTalk multimodal model
+name: multitalk-multimodal
+python_version: "3.10"
+
+description: |
+  MultiTalk: Multimodal LLM (audio, image, text) inference. Accepts audio (.wav/.mp3), image (.jpg/.png), and text prompt. Returns generated text response.
+
+inputs:
+  audio_path:
+    type: string
+    description: "Path to audio file (.wav or .mp3). Optional."
+    default: ""
+    required: false
+  image_path:
+    type: string
+    description: "Path to image file (.jpg or .png). Optional."
+    default: ""
+    required: false
+  text_input:
+    type: string
+    description: "Text prompt for the model."
+    default: "Describe the content."
+    required: false
+  max_tokens:
+    type: integer
+    description: "Maximum number of tokens to generate."
+    default: 256
+    required: false
+
+run:
+  command: python predict.py 
