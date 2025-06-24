@@ -1,0 +1,17 @@
+# cog.yaml
+build:
+  python_version: "3.10"
+  python_packages:
+    - torch
+    - transformers
+    - torchaudio
+    - Pillow
+    - ffmpeg-python
+
+predict:
+  type: python
+  python: predict.py
+  outputs:
+    - type: string
+      name: response
+      description: Generated text from MultiTalk
